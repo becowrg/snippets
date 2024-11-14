@@ -1,86 +1,77 @@
-<body class="bg-gray-100">  
-<header class="bg-white shadow-md py-4 px-4 fixed top-0 left-0 right-0 z-50">
-  <div class="flex items-center justify-between">
-    <div>
-      <h1 class="text-xl font-bold">Admin Dashboard</h1>
-    </div>
-    <div class="relative inline-block text-left">
-      <button type="button" class="flex items-center" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-        <span class="mr-2">John Doe</span>
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-      </button>
-      <div class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden" id="user-menu" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button">
-        <div class="py-1" role="none">
-          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Your Profile</a>
-          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</a>
-          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign out</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<script>
-  const userMenuButton = document.getElementById('user-menu-button');
-  const userMenu = document.getElementById('user-menu');
-
-  userMenuButton.addEventListener('click', () => {
-    userMenu.classList.toggle('hidden');
-  });
-</script>
-<div class="mt-14">
-  <aside class="bg-gray-800 text-white w-64 h-screen fixed overflow-y-auto">
-    <div class="p-4">
-      <h2 class="text-xl font-bold mb-4">Dashboard</h2>
-      <ul class="space-y-2">
-        <li>
-          <a href="#" class="flex items-center p-2 rounded hover:bg-gray-700">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round"  
- stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-            Dashboard
-          </a>
-        </li>
-        <li>  
-
-          <button type="button" class="flex items-center p-2 w-full rounded hover:bg-gray-700" onclick="toggleSubMenu('submenu1')">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            Products  
-
-            <svg class="w-4 h-4 ml-auto transition-transform" id="submenu1-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>  
-
-          </button>
-          <ul id="submenu1" class="hidden pl-4 space-y-2">
-            <li><a href="#" class="flex items-center p-2 rounded hover:bg-gray-700">All Products</a></li>
-            <li><a href="#" class="flex items-center p-2 rounded hover:bg-gray-700">Create Product</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" class="flex items-center p-2 rounded hover:bg-gray-700">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round"  
- stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>  
-
-            Customers
-          </a>
-        </li>
-      </ul>
-    </div>
-  </aside>
-
-  <main class="ml-64 p-4">
-    <div class="bg-white rounded-lg shadow p-4">
-      <h1 class="text-2xl font-bold mb-4">Welcome to the Admin Dashboard</h1>
-      <p>This is the main content area where you can add your admin panels, charts, tables, and other UI elements.</p>
-    </div>
-  </main>
-
-  <script>
-    function toggleSubMenu(submenuId) {
-      const submenu = document.getElementById(submenuId);
-      const arrow = document.getElementById(`${submenuId}-arrow`);
-      submenu.classList.toggle('hidden');
-      arrow.classList.toggle('rotate-90');
-    }
-  </script>
-  </div>
-
-</body>
+<div class="overflow-x-auto">
+  <table class="min-w-full divide-y divide-gray-200">
+    <thead class="bg-gray-50">
+      <tr>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Ticket ID
+        </th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Subject
+        </th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Client
+        </th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Priority
+        </th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Status
+        </th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Assigned To
+        </th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Created Date
+        </th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Due Date
+        </th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Last Updated
+        </th>
+        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+      <tr>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="text-sm text-gray-900">1234</div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="text-sm text-gray-900">Password Reset</div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="text-sm text-gray-900">Acme Corp</div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+            High
+          </span>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+            Open
+          </span>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          John Doe
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          2024-11-14
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          2024-11-15
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          2024-11-14 12:00 PM
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+          <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+          <a href="#" class="text-red-600 hover:text-red-900 ml-2">Delete</a>
+        </td>
+      </tr>
+      </tbody>
+  </table>
+</div>
